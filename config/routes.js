@@ -40,8 +40,12 @@ module.exports.routes = {
     view: 'createbookingcalendar'
   },
 
-  'get /createlisting': {
+  'get /create_listing_calendar': {
     view: 'createlisting_calendar'
+  },
+
+  'get /create_listing_description': {
+    view: 'createlisting_description'
   }
 
   /***************************************************************************
