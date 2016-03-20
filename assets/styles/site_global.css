@@ -193,11 +193,53 @@ a.nontext /* used to override default properties of 'a' tag */
 	padding: 0px;
 }
 
-.Paragraph-Style
+.Heading---Dark
 {
-	color: #3FE0FF;
-	font-family: Haettenschweiler;
+	color: #333E48;
+	font-family: lato, sans-serif;
+	font-size: 22px;
+	font-weight: 900;
+	text-align: left;
+	padding: 0px;
+}
+
+.Heading-3---Dark
+{
+	color: #333E48;
+	font-family: lato, sans-serif;
 	font-size: 14px;
+	font-weight: 700;
+	text-align: left;
+	padding: 0px;
+}
+
+.Paragraph---Light-accent
+{
+	color: #AFAFAF;
+	font-family: lato, sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: left;
+	padding: 0px;
+}
+
+.Heading-3---Accent
+{
+	color: #AFAFAF;
+	font-family: lato, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: left;
+	padding: 0px;
+}
+
+.Heading-2---Dark
+{
+	color: #333E48;
+	font-family: lato, sans-serif;
+	font-size: 18px;
+	font-weight: 900;
+	text-align: left;
 	padding: 0px;
 }
 
@@ -582,3 +624,4 @@ p,h1,h2,h3,h4,h5,h6,ol,ul,span.actAsPara /* disable Android font boosting */
 		text-rendering: auto;
 	}
 }
+
