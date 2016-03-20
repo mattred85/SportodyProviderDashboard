@@ -50,6 +50,10 @@ module.exports.routes = {
 
   'get /create_listing_extras': {
     view: 'createlisting_extras'
+  },
+
+  'get /create_listing_preview': {
+    view: 'createlisting_preview'
   }
 
   /***************************************************************************
