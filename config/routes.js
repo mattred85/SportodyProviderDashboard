@@ -46,6 +46,10 @@ module.exports.routes = {
 
   'get /create_listing_description': {
     view: 'createlisting_description'
+  },
+
+  'get /create_listing_extras': {
+    view: 'createlisting_extras'
   }
 
   /***************************************************************************
