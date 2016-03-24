@@ -13,7 +13,6 @@
     };
   </script>
 
-
   <meta name="generator" content="2015.1.1.343">
   <title>BOOKING (Create - Extras)</title>
 
@@ -32,7 +31,7 @@
   <!--STYLES END-->
 </head>
 
-<body class="initialized" data-whatinput="mouse">
+<body class="initialized" data-whatinput="mouse" ng-app="ListingModule" ng-controller="ListingController">
 
   <div class="clearfix" id="page">
     <!-- column -->
@@ -163,56 +162,77 @@
         <!-- content -->
         <p>Here is where you can ask for information such as height, weight, shoe size.</p>
       </div>
+
+
       <div class="rounded-corners clearfix colelem" id="u2553">
-        <!-- group -->
-        <div class="clearfix grpelem" id="pu2675-4">
-          <!-- column -->
-          <div class="Heading-3---Accent clearfix colelem" id="u2675-4">
-            <!-- content -->
-            <p>Type</p>
+
+        <!--FIELDS TITLES -->
+
+        <div style="padding-bottom: 24px;">
+          <div class="clearfix grpelem" id="pu2675-4">
+            <!-- column -->
+            <div class="Heading-3---Accent clearfix colelem" id="u2675-4">
+              <!-- content -->
+              <p>Type</p>
+            </div>
           </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2669-4">
-            <!-- content -->
-            <p id="u2669-2">Type</p>
+          <div class="clearfix grpelem" id="pu2678-4">
+            <!-- column -->
+            <div class="Heading-3---Accent clearfix colelem" id="u2678-4">
+              <!-- content -->
+              <p>Field name</p>
+            </div>
           </div>
-        </div>
-        <div class="clearfix grpelem" id="pu2678-4">
-          <!-- column -->
-          <div class="Heading-3---Accent clearfix colelem" id="u2678-4">
-            <!-- content -->
-            <p>Field name</p>
+          <div class="clearfix grpelem" id="pu2681-4">
+            <!-- column -->
+            <div class="Heading-3---Accent clearfix colelem" id="u2681-4">
+              <!-- content -->
+              <p>Brief description</p>
+            </div>
           </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2666-4">
-            <!-- content -->
-            <p id="u2666-2">Field</p>
-          </div>
-        </div>
-        <div class="clearfix grpelem" id="pu2681-4">
-          <!-- column -->
-          <div class="Heading-3---Accent clearfix colelem" id="u2681-4">
-            <!-- content -->
-            <p>Brief description</p>
-          </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2672-4">
-            <!-- content -->
-            <p id="u2672-2">Description</p>
-          </div>
-        </div>
-        <div class="clearfix grpelem" id="pu2684-4">
-          <!-- column -->
-          <div class="Heading-3---Accent clearfix colelem" id="u2684-4">
-            <!-- content -->
-            <p>Required</p>
-          </div>
-          <div class="rounded-corners colelem" id="u2693">
-            <!-- simple frame -->
+          <div class="clearfix grpelem" id="pu2684-4">
+            <!-- column -->
+            <div class="Heading-3---Accent clearfix colelem" id="u2684-4">
+              <!-- content -->
+              <p>Required</p>
+            </div>
           </div>
         </div>
-        <div class="rounded-corners Heading-3---Dark clearfix grpelem" id="u2696-4">
-          <!-- content -->
-          <h3 id="u2696-2">Add</h3>
-        </div>
+
+        <!--INPUT-->
+
+        <fieldset style="margin-top: 12px;" data-ng-repeat="extra in extrasForm.extras">
+          <div style="height: 100%; width: 100%;" class="clearfix grpelem" id="type">
+              <select style="min-height: 25px; text-align:center;" ng-model="extra.option">
+                <option value="" disabled selected>Select type</option>
+                <option>Date</option>
+                <option>Number</option>
+              </select>
+          </div>
+
+          <div class="clearfix grpelem" id="field-name-outer-div">
+            <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="field-name-inner-div">
+              <input style="height: 100%; width: 100%;" id="field-name-input" type="text" ng-model="extra.field" name="" placeholder="Field">
+            </div>
+          </div>
+
+          <div class="clearfix grpelem" id="description-outer-div">
+            <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="description-inner-div">
+              <input style="height: 100%; width: 100%;" id="description-input" type="text" ng-model="extra.description" name="" placeholder="Description">
+            </div>
+          </div>
+
+          <div class="clearfix grpelem" id="required-outer-div">
+              <input id="required-checkbox" class="rounded-corners colelem" style="transform: scale(1.6); -ms-transform: scale(1.6); -webkit-transform: scale(1.6);" type="checkbox" ng-model="extra.required">
+          </div>
+
+          <button id="add-field-button" ng-show="!$last" class="rounded-corners Heading-3---Dark clearfix grpelem" ng-click="removeExtra(extra)">Remove</button>
+          <button id="add-field-button" ng-show="$last" class="rounded-corners Heading-3---Dark clearfix grpelem" ng-click="addExtra()">Add</button>
+
+        </fieldset>
+
       </div>
+
       <div class="clearfix colelem" id="pu2554-4">
         <!-- group -->
         <a class="nonblock nontext clearfix grpelem" id="u2554-4" href="create_listing_description">
