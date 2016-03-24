@@ -36,10 +36,6 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'get /createlistingcalendar': {
-    view: 'createbookingcalendar'
-  },
-
   'get /create_listing_calendar': {
     view: 'createlisting_calendar'
   },
