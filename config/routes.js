@@ -40,17 +40,23 @@ module.exports.routes = {
     view: 'createlisting_calendar'
   },
 
-  'get /create_listing_description': {
-    view: 'createlisting_description'
-  },
+  //'get /create_listing_description': {
+  //  view: 'createlisting_description'
+  //},
 
-  'get /create_listing_extras': {
-    view: 'createlisting_extras'
-  },
+  'get /create_listing_description': 'ListingController.listingDescription',
 
-  'get /create_listing_preview': {
-    view: 'createlisting_preview'
-  }
+  //'get /create_listing_extras': {
+  //  view: 'createlisting_extras'
+  //},
+
+  'get /create_listing_extras': 'ListingController.listingExtras',
+
+  //'get /create_listing_preview': {
+  //  view: 'createlisting_preview'
+  //}
+
+  'get /create_listing_preview': 'ListingController.listingPreview'
 
   /***************************************************************************
   *                                                                          *

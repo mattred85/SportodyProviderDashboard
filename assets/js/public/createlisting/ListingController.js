@@ -1,4 +1,4 @@
-angular.module('ListingModule').controller('ListingController', function($scope, $http, $window){
+angular.module('ListingModule').controller('ListingController', function($scope, $http, $window, $location){
 
   // DESCRIPTION FORM
   $scope.descriptionForm = {};
@@ -21,4 +21,15 @@ angular.module('ListingModule').controller('ListingController', function($scope,
     var index = $scope.extrasForm.extras.indexOf(extra);
     $scope.extrasForm.extras.splice(index, 1);
   };
+
+  $scope.clickedExtrasNext = function() {
+    var params = $location.search();
+
+    console.log('Scope listing::::');
+    console.log($window.SAILS_LOCALS.listing);
+
+    $window.location.href = '/create_listing_preview?listingName=' + $window.SAILS_LOCALS.listing.listingName +
+                            '&listingSummary=' + $window.SAILS_LOCALS.listing.listingSummary +
+                            '&extras=' + $scope.extrasForm.extras;
+  }
 });

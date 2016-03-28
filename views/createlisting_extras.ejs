@@ -13,6 +13,13 @@
     };
   </script>
 
+  <script type="text/javascript">
+    window.SAILS_LOCALS = {
+      _csrf: '<%= _csrf %>',
+      listing: <%- JSON.stringify(listing) %>
+    };
+  </script>
+
   <meta name="generator" content="2015.1.1.343">
   <title>BOOKING (Create - Extras)</title>
 
@@ -239,12 +246,23 @@
           <!-- content -->
           <h2 class="Heading-2---Dark" id="u2554-2">Back</h2>
         </a>
-        <a class="nonblock nontext Button rounded-corners clearfix grpelem" id="buttonu4307" href="create_listing_preview">
-          <!-- container box -->
+
+
+
+
+        <button class="nonblock nontext Button rounded-corners clearfix grpelem" id="buttonu4307" ng-click="clickedExtrasNext()">
           <div class="Heading-2---Dark clearfix grpelem" id="u4308-4">
             <!-- content -->
-            <h2>Next</h2></div>
-        </a>
+            <h2>Next</h2>
+          </div>
+        </button>
+        <!--<a class="nonblock nontext Button rounded-corners clearfix grpelem" id="buttonu4307" ng-click="clickedExtrasNext()">-->
+          <!--&lt;!&ndash; container box &ndash;&gt;-->
+          <!--<div class="Heading-2---Dark clearfix grpelem" id="u4308-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<h2>Next</h2>-->
+          <!--</div>-->
+        <!--</a>-->
       </div>
       <div class="verticalspacer" style="height: 230px;"></div>
       <div class="browser_width colelem" id="u587-bw" style="height: 249px;">
