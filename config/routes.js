@@ -38,6 +38,8 @@ module.exports.routes = {
 
   'get /listings': 'ListingController.listings',
 
+  'post /api/delete-listing': 'ListingController.deleteListing',
+
   'get /create_listing_calendar': {
     view: 'createlisting_calendar'
   },

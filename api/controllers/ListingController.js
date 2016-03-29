@@ -103,6 +103,24 @@ module.exports = {
       res.send({message: 'ok', listing: listing});
     });
 
+  },
+
+  deleteListing: function(req, res) {
+    console.log('==============================');
+    console.log('ListingController.deleteListing');
+    var params = req.params.all();
+    console.log('Listing:');
+    console.log(params.listing);
+
+    Listing.destroy({
+      id: params.listing.id
+    }).exec(function(err) {
+      if (err) {
+        res.serverError(err);
+        return;
+      }
+      res.send({message: 'ok'});
+    })
   }
 };
 
