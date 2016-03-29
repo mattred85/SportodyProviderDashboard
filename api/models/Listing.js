@@ -16,7 +16,7 @@ module.exports = {
       type: 'Int',
       default: 0
     },
-    name: {
+    title: {
       type: 'String'
     },
     summary: {

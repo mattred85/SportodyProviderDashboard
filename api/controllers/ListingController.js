@@ -62,6 +62,33 @@ module.exports = {
         extras: params.extras
       }
     });
+  },
+
+  publishListing: function(req, res) {
+    console.log('==============================');
+    console.log('ListingController.publishListing');
+    var params = req.params.all();
+    console.log('Listing:');
+    console.log(params.listing);
+
+    Listing.create({
+      calendar: params.listing.calendar,
+      title: params.listing.title,
+      summary: params.listing.summary,
+      extras: params.listing.extras
+    }).exec(function(err, listing) {
+      if (err) {
+        console.log('ERROR: <ListingsController.publishListing>');
+        console.log(err);
+        res.serverError(err);
+        return;
+      }
+
+      console.log('<ListingController.publishListing ----> Successfully created listing');
+      console.log(listing);
+      res.send({message: 'ok', listing: listing});
+    });
+
   }
 };
 

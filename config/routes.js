@@ -58,7 +58,9 @@ module.exports.routes = {
   //  view: 'createlisting_preview'
   //}
 
-  'get /create_listing_preview': 'ListingController.listingPreview'
+  'get /create_listing_preview': 'ListingController.listingPreview',
+
+  'post /api/publish_listing' : 'ListingController.publishListing'
 
   /***************************************************************************
   *                                                                          *
