@@ -13,6 +13,13 @@
     };
   </script>
 
+  <script type="text/javascript">
+    window.SAILS_LOCALS = {
+      _csrf: '<%= _csrf %>',
+      listing: <%- JSON.stringify(listing) %>
+    };
+  </script>
+
 
   <meta name="generator" content="2015.1.1.343">
   <title>BOOKING (Create - Preview)</title>
@@ -32,7 +39,7 @@
   <!--STYLES END-->
 </head>
 
-<body class="initialized" data-whatinput="mouse">
+<body class="initialized" data-whatinput="mouse" ng-app="ListingModule" ng-controller="PreviewController">
 
   <div class="clearfix" id="page">
     <!-- column -->
@@ -204,7 +211,7 @@
       </div>
       <div class="Heading-2---Dark clearfix colelem" id="u2872-4">
         <!-- content -->
-        <h2>Indoor skydiving!</h2>
+        <h2><span ng-bind="preview.title"></span></h2>
       </div>
       <div class="Heading-3---Dark clearfix colelem" id="u2875-4">
         <!-- content -->
@@ -351,6 +358,7 @@
   <script src="/js/dependencies/whatinput.js"></script>
   <script src="/js/public/createlisting/ListingModule.js"></script>
   <script src="/js/public/createlisting/ListingController.js"></script>
+  <script src="/js/public/listing_preview/PreviewController.js"></script>
   <!--SCRIPTS END-->
 
 

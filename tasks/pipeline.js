@@ -33,6 +33,7 @@ var jsFilesToInject = [
 
   '/js/public/createlisting/ListingModule.js',
   '/js/public/createlisting/ListingController.js',
+  '/js/public/listing_preview/PreviewController.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.

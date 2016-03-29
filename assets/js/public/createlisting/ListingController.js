@@ -4,8 +4,8 @@ angular.module('ListingModule').controller('ListingController', function($scope,
   $scope.descriptionForm = {};
 
   $scope.clickedDescriptionNext = function() {
-    if ($scope.descriptionForm.listingName && $scope.descriptionForm.listingSummary) {
-      $window.location.href = '/create_listing_extras?listingName=' + $scope.descriptionForm.listingName + '&listingSummary=' + $scope.descriptionForm.listingSummary;
+    if ($scope.descriptionForm.title && $scope.descriptionForm.summary) {
+      $window.location.href = '/create_listing_extras?title=' + $scope.descriptionForm.title + '&summary=' + $scope.descriptionForm.summary;
     }
   };
 
@@ -28,8 +28,8 @@ angular.module('ListingModule').controller('ListingController', function($scope,
     console.log('Scope listing::::');
     console.log($window.SAILS_LOCALS.listing);
 
-    $window.location.href = '/create_listing_preview?listingName=' + $window.SAILS_LOCALS.listing.listingName +
-                            '&listingSummary=' + $window.SAILS_LOCALS.listing.listingSummary +
+    $window.location.href = '/create_listing_preview?title=' + $window.SAILS_LOCALS.listing.title +
+                            '&summary=' + $window.SAILS_LOCALS.listing.summary +
                             '&extras=' + $scope.extrasForm.extras;
-  }
+  };
 });

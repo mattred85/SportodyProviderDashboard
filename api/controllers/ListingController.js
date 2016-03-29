@@ -15,7 +15,8 @@ module.exports = {
 
     res.view('createlisting_description', {
       listing: {
-        calendar: 1
+        calendar: params.calendar,
+        title: params.title
       }
     });
   },
@@ -28,9 +29,9 @@ module.exports = {
 
     res.view('createlisting_extras', {
       listing: {
-        calendar: 1,
-        title: 'some title',
-        summary: 'some summary'
+        calendar: params.calendar,
+        title: params.title,
+        summary: params.summary
       }
     });
   },
@@ -43,10 +44,10 @@ module.exports = {
 
     res.view('createlisting_preview', {
       listing: {
-        calendar: 1,
-        title: 'some title',
-        summary: 'some summary',
-        extras: [{type: 'Number'}, {type: 'String'}]
+        calendar: params.calendar,
+        title: params.title,
+        summary: params.summary,
+        extras: params.extras
       }
     });
   }
