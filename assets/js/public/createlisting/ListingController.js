@@ -21,7 +21,11 @@ angular.module('ListingModule').controller('ListingController', function($scope,
 
   /////// EXTRAS FORM ///////
   $scope.extrasForm = {};
-  $scope.extrasForm.extras = [{id: 'extra1'}];
+  if ($window.SAILS_LOCALS.listing.extras) {
+    $scope.extrasForm.extras = JSON.parse($window.SAILS_LOCALS.listing.extras);
+  } else {
+    $scope.extrasForm.extras = [{id: 'extra1'}];
+  }
   $scope.addExtra = function() {
     var newExtraId = $scope.extrasForm.extras.length+1;
     $scope.extrasForm.extras.push({'id':'extra'+newExtraId});

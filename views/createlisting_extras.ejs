@@ -214,7 +214,7 @@
 
         <!--INPUT-->
 
-        <fieldset style="margin-top: 12px;" data-ng-repeat="extra in extrasForm.extras">
+        <fieldset style="margin-top: 12px;" data-ng-repeat="extra in extrasForm.extras track by $index">
           <div style="height: 100%; width: 100%;" class="clearfix grpelem" id="type">
               <select style="min-height: 25px; text-align:center;" ng-model="extra.option">
                 <option value="" disabled selected>Select type</option>

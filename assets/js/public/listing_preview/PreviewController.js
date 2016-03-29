@@ -25,8 +25,9 @@ angular.module('ListingModule').controller('PreviewController', function($scope,
   };
 
   $scope.clickedExtrasBack = function() {
-    $window.location.href = '/create_listing_preview?title=' + $window.SAILS_LOCALS.listing.title +
+
+    $window.location.href = '/create_listing_extras?title=' + $window.SAILS_LOCALS.listing.title +
     '&summary=' + $window.SAILS_LOCALS.listing.summary +
-    '&extras=' + $scope.extrasForm.extras;
+    '&extras=' + $window.SAILS_LOCALS.listing.extras;
   }
 });
