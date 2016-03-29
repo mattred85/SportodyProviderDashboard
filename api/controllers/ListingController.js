@@ -7,6 +7,29 @@
 
 module.exports = {
 
+  listings: function(req, res) {
+    var params = req.params.all();
+    console.log('==============================');
+    console.log('ListingController.listings');
+    console.log(params);
+
+    Listing.find().exec(function(err, listings) {
+      if (err) {
+        console.log('Error finding listings');
+        console.log(err);
+        res.view('listings');
+        return;
+      }
+
+      console.log('Found listings:');
+      console.log(listings);
+      res.view('listings', {
+        listings: listings
+      });
+    })
+
+  },
+
   listingDescription: function(req, res) {
     var params = req.params.all();
     console.log('==============================');
@@ -53,6 +76,51 @@ module.exports = {
         extras: params.extras
       }
     });
+  },
+
+  publishListing: function(req, res) {
+    console.log('==============================');
+    console.log('ListingController.publishListing');
+    var params = req.params.all();
+    console.log('Listing:');
+    console.log(params.listing);
+
+    Listing.create({
+      calendar: params.listing.calendar,
+      title: params.listing.title,
+      summary: params.listing.summary,
+      extras: params.listing.extras
+    }).exec(function(err, listing) {
+      if (err) {
+        console.log('ERROR: <ListingsController.publishListing>');
+        console.log(err);
+        res.serverError(err);
+        return;
+      }
+
+      console.log('<ListingController.publishListing ----> Successfully created listing');
+      console.log(listing);
+      res.send({message: 'ok', listing: listing});
+    });
+
+  },
+
+  deleteListing: function(req, res) {
+    console.log('==============================');
+    console.log('ListingController.deleteListing');
+    var params = req.params.all();
+    console.log('Listing:');
+    console.log(params.listing);
+
+    Listing.destroy({
+      id: params.listing.id
+    }).exec(function(err) {
+      if (err) {
+        res.serverError(err);
+        return;
+      }
+      res.send({message: 'ok'});
+    })
   }
 };
 

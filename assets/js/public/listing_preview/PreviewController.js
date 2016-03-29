@@ -29,5 +29,18 @@ angular.module('ListingModule').controller('PreviewController', function($scope,
     $window.location.href = '/create_listing_extras?title=' + $window.SAILS_LOCALS.listing.title +
     '&summary=' + $window.SAILS_LOCALS.listing.summary +
     '&extras=' + $window.SAILS_LOCALS.listing.extras;
-  }
+  };
+
+  $scope.publishListing = function() {
+    console.log('Publishing listing');
+    $http.post('/api/publish_listing', {
+      listing: $scope.preview
+    }).then(function(res) {
+      console.log('Listing published successfully... redirecting to listings page');
+      $window.location.href = '/listings';
+    }).catch(function(err) {
+      console.log('Error publishing the listing');
+      console.log(err);
+    })
+  };
 });

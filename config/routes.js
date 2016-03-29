@@ -36,6 +36,10 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  'get /listings': 'ListingController.listings',
+
+  'post /api/delete-listing': 'ListingController.deleteListing',
+
   'get /create_listing_calendar': {
     view: 'createlisting_calendar'
   },
@@ -56,7 +60,9 @@ module.exports.routes = {
   //  view: 'createlisting_preview'
   //}
 
-  'get /create_listing_preview': 'ListingController.listingPreview'
+  'get /create_listing_preview': 'ListingController.listingPreview',
+
+  'post /api/publish_listing' : 'ListingController.publishListing'
 
   /***************************************************************************
   *                                                                          *
