@@ -668,6 +668,10 @@
 	padding-top: 6px;
 }
 
+input, select, textarea {
+  color: #000000;
+}
+
 #pu2502-4
 {
 	width: 0.01px;
