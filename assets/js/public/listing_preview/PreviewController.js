@@ -15,4 +15,18 @@ angular.module('ListingModule').controller('PreviewController', function($scope,
     var index = $scope.preview.extras.indexOf(extra);
     $scope.preview.extras.splice(index, 1);
   };
+
+  $scope.clickedCalendarBack = function() {
+    $window.location.href = '/create_listing_calendar'
+  };
+
+  $scope.clickedDescriptionBack = function() {
+    $window.location.href = '/create_listing_description?title=' + $window.SAILS_LOCALS.listing.title + '&summary=' + $window.SAILS_LOCALS.listing.summary;
+  };
+
+  $scope.clickedExtrasBack = function() {
+    $window.location.href = '/create_listing_preview?title=' + $window.SAILS_LOCALS.listing.title +
+    '&summary=' + $window.SAILS_LOCALS.listing.summary +
+    '&extras=' + $scope.extrasForm.extras;
+  }
 });

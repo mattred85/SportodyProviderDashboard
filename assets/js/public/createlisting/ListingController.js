@@ -41,13 +41,12 @@ angular.module('ListingModule').controller('ListingController', function($scope,
   };
 
   $scope.clickedExtrasNext = function() {
-    var params = $location.search();
-
-    console.log('Scope listing::::');
-    console.log($window.SAILS_LOCALS.listing);
+    console.log($scope.extrasForm.extras);
+    var extrasString = JSON.stringify($scope.extrasForm.extras);
+    console.log(extrasString);
 
     $window.location.href = '/create_listing_preview?title=' + $window.SAILS_LOCALS.listing.title +
                             '&summary=' + $window.SAILS_LOCALS.listing.summary +
-                            '&extras=' + $scope.extrasForm.extras;
+                            '&extras=' + extrasString;
   };
 });
