@@ -7,6 +7,15 @@
 
 module.exports = {
 
+  listings: function(req, res) {
+    var params = req.params.all();
+    console.log('==============================');
+    console.log('ListingController.listings');
+    console.log(params);
+
+    res.view('listings');
+  },
+
   listingDescription: function(req, res) {
     var params = req.params.all();
     console.log('==============================');
