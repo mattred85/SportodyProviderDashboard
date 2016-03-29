@@ -1,7 +1,17 @@
 angular.module('ListingModule').controller('ListingController', function($scope, $http, $window, $location){
 
-  // DESCRIPTION FORM
+  /////// DESCRIPTION FORM ///////
   $scope.descriptionForm = {};
+
+  if ($window.SAILS_LOCALS) {
+    if ($window.SAILS_LOCALS.listing.title) {
+      $scope.descriptionForm.title =  $window.SAILS_LOCALS.listing.title;
+    }
+
+    if ($window.SAILS_LOCALS.listing.summary) {
+      $scope.descriptionForm.summary = $window.SAILS_LOCALS.listing.summary;
+    }
+  }
 
   $scope.clickedDescriptionNext = function() {
     if ($scope.descriptionForm.title && $scope.descriptionForm.summary) {
@@ -9,7 +19,7 @@ angular.module('ListingModule').controller('ListingController', function($scope,
     }
   };
 
-  // EXTRAS FORM
+  /////// EXTRAS FORM ///////
   $scope.extrasForm = {};
   $scope.extrasForm.extras = [{id: 'extra1'}];
   $scope.addExtra = function() {
@@ -20,6 +30,14 @@ angular.module('ListingModule').controller('ListingController', function($scope,
   $scope.removeExtra = function(extra) {
     var index = $scope.extrasForm.extras.indexOf(extra);
     $scope.extrasForm.extras.splice(index, 1);
+  };
+
+  $scope.clickedCalendarBack = function() {
+    $window.location.href = '/create_listing_calendar'
+  };
+
+  $scope.clickedDescriptionBack = function() {
+    $window.location.href = '/create_listing_description?title=' + $window.SAILS_LOCALS.listing.title + '&summary=' + $window.SAILS_LOCALS.listing.summary;
   };
 
   $scope.clickedExtrasNext = function() {

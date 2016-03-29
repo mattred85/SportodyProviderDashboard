@@ -13,6 +13,12 @@
     };
   </script>
 
+  <script type="text/javascript">
+    window.SAILS_LOCALS = {
+      _csrf: '<%= _csrf %>',
+      listing: <%- JSON.stringify(listing) %>
+    };
+  </script>
 
   <meta name="generator" content="2015.1.1.343">
   <title>BOOKING (Create - Description)</title>
@@ -147,14 +153,18 @@
         <div class="grpelem" id="u2239">
           <!-- simple frame -->
         </div>
-        <div class="clip_frame grpelem" id="u2236">
+
+
+        <button class="clip_frame grpelem" id="u2236" ng-click="clickedCalendarBack()">
           <!-- image -->
           <img class="block" id="u2236_img" src="images/untitled-1.png" alt="" width="57" height="56">
-        </div>
-        <div class="clearfix grpelem" id="u2238-4">
+        </button>
+        <button class="clearfix grpelem" id="u2238-4" ng-click="clickedCalendarBack()">
           <!-- content -->
           <p>1</p>
-        </div>
+        </button>
+
+
         <div class="clip_frame grpelem" id="u2243">
           <!-- image -->
           <img class="block" id="u2243_img" src="images/untitled-1.png" alt="" width="57" height="57">
