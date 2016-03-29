@@ -232,97 +232,167 @@
         <!-- content -->
         <p>Information needed from the person:</p>
       </div>
-      <div class="rounded-corners clearfix colelem" id="u2787">
-        <!-- group -->
-        <div class="clearfix grpelem" id="pu2788-4">
-          <!-- column -->
-          <div class="Heading-3---Accent clearfix colelem" id="u2788-4">
-            <!-- content -->
-            <p>Type</p>
+
+      <div class="rounded-corners clearfix colelem" id="u2553">
+
+        <!--FIELDS TITLES -->
+
+        <div style="padding-bottom: 24px;">
+          <div class="clearfix grpelem" id="pu2675-4">
+            <!-- column -->
+            <div class="Heading-3---Accent clearfix colelem" id="u2675-4">
+              <!-- content -->
+              <p>Type</p>
+            </div>
           </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2793-4">
-            <!-- content -->
-            <p id="u2793-2">Number</p>
+          <div class="clearfix grpelem" id="pu2678-4">
+            <!-- column -->
+            <div class="Heading-3---Accent clearfix colelem" id="u2678-4">
+              <!-- content -->
+              <p>Field name</p>
+            </div>
           </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2908-4">
-            <!-- content -->
-            <p id="u2908-2">Number</p>
+          <div class="clearfix grpelem" id="pu2681-4">
+            <!-- column -->
+            <div class="Heading-3---Accent clearfix colelem" id="u2681-4">
+              <!-- content -->
+              <p>Brief description</p>
+            </div>
           </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2923-4">
-            <!-- content -->
-            <p id="u2923-2">Type</p>
-          </div>
-        </div>
-        <div class="clearfix grpelem" id="pu2797-4">
-          <!-- column -->
-          <div class="Heading-3---Accent clearfix colelem" id="u2797-4">
-            <!-- content -->
-            <p>Field name</p>
-          </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2798-4">
-            <!-- content -->
-            <p id="u2798-2">Height</p>
-          </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2907-4">
-            <!-- content -->
-            <p id="u2907-2">Age</p>
-          </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2922-4">
-            <!-- content -->
-            <p id="u2922-2">Field</p>
+          <div class="clearfix grpelem" id="pu2684-4">
+            <!-- column -->
+            <div class="Heading-3---Accent clearfix colelem" id="u2684-4">
+              <!-- content -->
+              <p>Required</p>
+            </div>
           </div>
         </div>
-        <div class="clearfix grpelem" id="pu2781-4">
-          <!-- column -->
-          <div class="Heading-3---Accent clearfix colelem" id="u2781-4">
-            <!-- content -->
-            <p>Brief description</p>
+
+        <!--INPUT-->
+
+        <fieldset style="margin-top: 12px;" data-ng-repeat="extra in preview.extras track by $index">
+          <div style="height: 100%; width: 100%;" class="clearfix grpelem" id="type">
+            <select style="min-height: 25px; text-align:center;" ng-model="extra.option">
+              <option value="" disabled selected>Select type</option>
+              <option>Date</option>
+              <option>Number</option>
+            </select>
           </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2796-4">
-            <!-- content -->
-            <p id="u2796-2">Needed for the suit</p>
+
+          <div class="clearfix grpelem" id="field-name-outer-div">
+            <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="field-name-inner-div">
+              <input style="height: 100%; width: 100%;" id="field-name-input" type="text" ng-model="extra.field" name="" placeholder="Field">
+            </div>
           </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2909-4">
-            <!-- content -->
-            <p id="u2909-2">Legal</p>
+
+          <div class="clearfix grpelem" id="description-outer-div">
+            <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="description-inner-div">
+              <input style="height: 100%; width: 100%;" id="description-input" type="text" ng-model="extra.description" name="" placeholder="Description">
+            </div>
           </div>
-          <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2924-4">
-            <!-- content -->
-            <p id="u2924-2">Description</p>
+
+          <div class="clearfix grpelem" id="required-outer-div">
+            <input id="required-checkbox" class="rounded-corners colelem" style="transform: scale(1.6); -ms-transform: scale(1.6); -webkit-transform: scale(1.6);" type="checkbox" ng-model="extra.required">
           </div>
-        </div>
-        <div class="clearfix grpelem" id="pu2779-4">
-          <!-- column -->
-          <div class="Heading-3---Accent clearfix colelem" id="u2779-4">
-            <!-- content -->
-            <p>Required</p>
-          </div>
-          <div class="rounded-corners colelem" id="u2775">
-            <!-- simple frame -->
-          </div>
-          <div class="rounded-corners colelem" id="u2910">
-            <!-- simple frame -->
-          </div>
-          <div class="rounded-corners colelem" id="u2925">
-            <!-- simple frame -->
-          </div>
-        </div>
-        <div class="clearfix grpelem" id="pu2940-4">
-          <!-- column -->
-          <div class="rounded-corners Heading-3---Accent clearfix colelem" id="u2940-4">
-            <!-- content -->
-            <p id="u2940-2">Remove</p>
-          </div>
-          <div class="rounded-corners Heading-3---Accent clearfix colelem" id="u2937-4">
-            <!-- content -->
-            <p id="u2937-2">Remove</p>
-          </div>
-          <div class="rounded-corners Heading-3---Accent clearfix colelem" id="u2926-4">
-            <!-- content -->
-            <p id="u2926-2">Add</p>
-          </div>
-        </div>
+
+          <button id="add-field-button" ng-show="!$last" class="rounded-corners Heading-3---Dark clearfix grpelem" ng-click="removeExtra(extra)">Remove</button>
+          <button id="add-field-button" ng-show="$last" class="rounded-corners Heading-3---Dark clearfix grpelem" ng-click="addExtra()">Add</button>
+
+        </fieldset>
+
       </div>
+
+      <!--<div class="rounded-corners clearfix colelem" id="u2787">-->
+        <!--&lt;!&ndash; group &ndash;&gt;-->
+        <!--<div class="clearfix grpelem" id="pu2788-4">-->
+          <!--&lt;!&ndash; column &ndash;&gt;-->
+          <!--<div class="Heading-3---Accent clearfix colelem" id="u2788-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p>Type</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2793-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2793-2">Number</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2908-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2908-2">Number</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2923-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2923-2">Type</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="clearfix grpelem" id="pu2797-4">-->
+          <!--&lt;!&ndash; column &ndash;&gt;-->
+          <!--<div class="Heading-3---Accent clearfix colelem" id="u2797-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p>Field name</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2798-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2798-2">Height</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2907-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2907-2">Age</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2922-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2922-2">Field</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="clearfix grpelem" id="pu2781-4">-->
+          <!--&lt;!&ndash; column &ndash;&gt;-->
+          <!--<div class="Heading-3---Accent clearfix colelem" id="u2781-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p>Brief description</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2796-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2796-2">Needed for the suit</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2909-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2909-2">Legal</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="u2924-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2924-2">Description</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="clearfix grpelem" id="pu2779-4">-->
+          <!--&lt;!&ndash; column &ndash;&gt;-->
+          <!--<div class="Heading-3---Accent clearfix colelem" id="u2779-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p>Required</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners colelem" id="u2775">-->
+            <!--&lt;!&ndash; simple frame &ndash;&gt;-->
+          <!--</div>-->
+          <!--<div class="rounded-corners colelem" id="u2910">-->
+            <!--&lt;!&ndash; simple frame &ndash;&gt;-->
+          <!--</div>-->
+          <!--<div class="rounded-corners colelem" id="u2925">-->
+            <!--&lt;!&ndash; simple frame &ndash;&gt;-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="clearfix grpelem" id="pu2940-4">-->
+          <!--&lt;!&ndash; column &ndash;&gt;-->
+          <!--<div class="rounded-corners Heading-3---Accent clearfix colelem" id="u2940-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2940-2">Remove</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Heading-3---Accent clearfix colelem" id="u2937-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2937-2">Remove</p>-->
+          <!--</div>-->
+          <!--<div class="rounded-corners Heading-3---Accent clearfix colelem" id="u2926-4">-->
+            <!--&lt;!&ndash; content &ndash;&gt;-->
+            <!--<p id="u2926-2">Add</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
       <div class="clearfix colelem" id="pu2792-4">
         <!-- group -->
         <a class="nonblock nontext clearfix grpelem" id="u2792-4" href="create_listing_extras">
