@@ -6,6 +6,13 @@
    if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["jquery-1.8.3.min.js", "museutils.js", "jquery.musemenu.js", "jquery.watch.js", "bookings.css"], "outOfDate":[]};
 </script>
 
+  <script type="text/javascript">
+    window.SAILS_LOCALS = {
+      _csrf: '<%= _csrf %>',
+      listings: <%- JSON.stringify(listings) %>
+    };
+  </script>
+
 
   <meta name="generator" content="2015.1.1.343">
   <title>BOOKINGS</title>
@@ -67,7 +74,7 @@ var __adobewebfontsappname__ = "muse";
   <!--</script>-->
 
  </head>
- <body class="initialized" data-whatinput="mouse">
+ <body class="initialized" data-whatinput="mouse" ng-app="ListingModule" ng-controller="ViewListingsController">
 
   <div class="clearfix" id="page"><!-- column -->
    <div class="position_content" id="page_position_content">

@@ -13,7 +13,21 @@ module.exports = {
     console.log('ListingController.listings');
     console.log(params);
 
-    res.view('listings');
+    Listing.find().exec(function(err, listings) {
+      if (err) {
+        console.log('Error finding listings');
+        console.log(err);
+        res.view('listings');
+        return;
+      }
+
+      console.log('Found listings:');
+      console.log(listings);
+      res.view('listings', {
+        listings: listings
+      });
+    })
+
   },
 
   listingDescription: function(req, res) {
