@@ -1,5 +1,21 @@
 angular.module('ListingModule').controller('ListingController', function($scope, $http, $window, $location){
 
+
+  /////// CALENDAR FORM ///////
+  $scope.calendarForm = {};
+  $scope.calendarForm.timeSlots = [{id: 'timeSlot1'}];
+
+  $scope.addTimeSlot = function() {
+    console.log('Clicked add time slot');
+    var newTimeSlotId = $scope.calendarForm.timeSlots.length+1;
+    $scope.calendarForm.timeSlots.push({'id':'timeSlot'+newTimeSlotId});
+    console.log($scope.calendarForm.timeSlots[0]);
+  };
+  $scope.removeTimeSlot = function(timeSlot) {
+    var index = $scope.calendarForm.timeSlots.indexOf(timeSlot);
+    $scope.calendarForm.timeSlots.splice(index, 1);
+  };
+
   /////// DESCRIPTION FORM ///////
   $scope.descriptionForm = {};
 
@@ -21,10 +37,13 @@ angular.module('ListingModule').controller('ListingController', function($scope,
 
   /////// EXTRAS FORM ///////
   $scope.extrasForm = {};
-  if ($window.SAILS_LOCALS.listing.extras) {
-    $scope.extrasForm.extras = JSON.parse($window.SAILS_LOCALS.listing.extras);
+  if (!$window.SAILS_LOCALS) {
   } else {
-    $scope.extrasForm.extras = [{id: 'extra1'}];
+    if ($window.SAILS_LOCALS.listing.extras) {
+      $scope.extrasForm.extras = JSON.parse($window.SAILS_LOCALS.listing.extras);
+    } else {
+      $scope.extrasForm.extras = [{id: 'extra1'}];
+    }
   }
   $scope.addExtra = function() {
     var newExtraId = $scope.extrasForm.extras.length+1;

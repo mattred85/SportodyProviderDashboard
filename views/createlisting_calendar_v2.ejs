@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="/styles/site_global.css">
   <!--STYLES END-->
    </head>
- <body class="initialized" data-whatinput="mouse">
+<body class="initialized" data-whatinput="mouse" ng-app="ListingModule" ng-controller="ListingController">
 
   <div class="clearfix" id="page"><!-- column -->
    <div class="position_content" id="page_position_content">
@@ -135,7 +135,12 @@
      <h2>When can people book this listing?</h2>
     </div>
     <div class="clearfix colelem" id="pu4639"><!-- group -->
-     <div class="rounded-corners grpelem" id="u4639"><!-- simple frame --></div>
+     <!--<div class="rounded-corners grpelem" id="u4639">&lt;!&ndash; simple frame &ndash;&gt;</div>-->
+
+      <!--<div class="rounded-corners grpelem" id="u4639">-->
+        <input class="rounded-corners grpelem" id="u4639" style="transform: scale(1); -ms-transform: scale(1); -webkit-transform: scale(1);" type="checkbox" ng-model="calendarForm.duringOperation">
+      <!--</div>-->
+
      <div class="Heading-3---Dark clearfix grpelem" id="u4642-4"><!-- content -->
       <h3>During hours of operation</h3>
      </div>
@@ -162,38 +167,43 @@
 
         <!-- CONTENT / OPTIONS -->
 
-        <div>
+        <div ng-repeat="timeSlot in calendarForm.timeSlots track by $index">
 
        <div class="clearfix colelem" id="pu4678"><!-- group -->
         <div class="clearfix grpelem" id="u4678"><!-- group -->
          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4675-4"><!-- content -->
-          <p id="u4675-2">4/16/16</p>
+           <input id="u4675-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.startDate" name="" placeholder="4/16/16">
          </div>
          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4684-4"><!-- content -->
-          <p id="u4684-2">12:00</p>
+           <input id="u4684-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.startTime" name="" placeholder="12:00">
          </div>
          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4690-4"><!-- content -->
-          <p id="u4690-2">PM</p>
+           <input id="u4690-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.startSuffix" name="" placeholder="PM">
          </div>
         </div>
         <div class="clearfix grpelem" id="u4708"><!-- group -->
          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4723-4"><!-- content -->
-          <p id="u4723-2">4/16/16</p>
+           <input id="u4723-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.endDate" name="" placeholder="4/17/16">
          </div>
          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4694-4"><!-- content -->
-          <p id="u4694-2">12:00</p>
+           <input id="u4694-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.endTime" name="" placeholder="1:00">
          </div>
          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4695-4"><!-- content -->
-          <p id="u4695-2">PM</p>
+           <input id="u4695-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.endSuffix" name="" placeholder="PM">
          </div>
         </div>
         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4729-4"><!-- content -->
-         <p id="u4729-2">Weekly</p>
+          <select id="u4729-2" style="text-align: center; width: 70px; min-height: 25px; text-align:center;" ng-model="timeSlot.repeat">
+            <option value="" disabled selected>Repeat</option>
+            <option>Daily</option>
+            <option>Weekly</option>
+            <option>Monthly</option>
+          </select>
         </div>
        </div>
-      <div class="rounded-corners Heading-3---Dark clearfix grpelem" id="u4717-4"><!-- content -->
-       <h3 id="u4717-2">Add</h3>
-      </div>
+
+          <button id="u4717-4" ng-show="!$last" class="rounded-corners Heading-3---Dark clearfix grpelem" ng-click="removeTimeSlot(timeSlot)">Remove</button>
+          <button id="u4717-4" ng-show="$last" class="rounded-corners Heading-3---Dark clearfix grpelem" ng-click="addTimeSlot()">Add</button>
 
         </div>
 
