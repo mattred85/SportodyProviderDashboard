@@ -41,7 +41,7 @@ module.exports.routes = {
   'post /api/delete-listing': 'ListingController.deleteListing',
 
   'get /create_listing_calendar': {
-    view: 'createlisting_calendar'
+    view: 'createlisting_calendar_v2'
   },
 
   //'get /create_listing_description': {
