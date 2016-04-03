@@ -140,9 +140,9 @@
         <input class="rounded-corners grpelem" id="u4639" style="transform: scale(1); -ms-transform: scale(1); -webkit-transform: scale(1);" type="checkbox" ng-model="calendarForm.duringOperation">
       <!--</div>-->
 
-     <div class="Heading-3---Dark clearfix grpelem" id="u4642-4"><!-- content -->
+     <button class="Heading-3---Dark clearfix grpelem" id="u4642-4" ng-click="calendarForm.duringOperation = !calendarForm.duringOperation"><!-- content -->
       <h3>During hours of operation</h3>
-     </div>
+     </button>
     </div>
     <div class="clearfix colelem" id="u4714"><!-- group -->
      <div class="rounded-corners clearfix grpelem" id="u4645"><!-- group -->
@@ -173,30 +173,64 @@
          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4675-4"><!-- content -->
            <input id="u4675-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.startDate" name="" placeholder="4/16/16">
          </div>
-         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4684-4"><!-- content -->
-           <input id="u4684-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.startTime" name="" placeholder="12:00">
+
+          <!--START TIME-->
+         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4684-4" ng-show="!calendarForm.duringOperation"><!-- content -->
+           <input id="u4684-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.startTime" name="" placeholder="9:00">
          </div>
-         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4690-4"><!-- content -->
-           <input id="u4690-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.startSuffix" name="" placeholder="PM">
+
+          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4684-4" ng-show="calendarForm.duringOperation"><!-- content -->
+            <input id="u4684-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-disabled="calendarForm.duringOperation" name="" placeholder="9:00">
+          </div>
+          <!--END START TIME-->
+
+          <!--START SUFFIX-->
+         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4690-4" ng-show="!calendarForm.duringOperation"><!-- content -->
+           <input id="u4690-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.startSuffix" name="" placeholder="AM">
          </div>
+          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4690-4" ng-show="calendarForm.duringOperation"><!-- content -->
+            <input id="u4690-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-disabled="calendarForm.duringOperation" name="" placeholder="AM">
+          </div>
+          <!--END START SUFFIX-->
         </div>
+
         <div class="clearfix grpelem" id="u4708"><!-- group -->
-         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4723-4"><!-- content -->
+
+          <!--END DATE-->
+         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4723-4" ng-show="!calendarForm.duringOperation"><!-- content -->
            <input id="u4723-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.endDate" name="" placeholder="4/17/16">
          </div>
-         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4694-4"><!-- content -->
-           <input id="u4694-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.endTime" name="" placeholder="1:00">
+          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4723-4" ng-show="calendarForm.duringOperation"><!-- content -->
+            <input id="u4723-2" style="text-align: center; height: 100%; width: 100%;" type="text"name="" placeholder="4/17/16">
+          </div>
+          <!--END END DATE-->
+
+          <!--END TIME-->
+         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4694-4" ng-show="!calendarForm.duringOperation"><!-- content -->
+           <input id="u4694-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.endTime" name="" placeholder="5:00">
          </div>
-         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4695-4"><!-- content -->
+          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4694-4"ng-show="calendarForm.duringOperation"><!-- content -->
+            <input id="u4694-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-disabled="calendarForm.duringOperation" name="" placeholder="5:00">
+          </div>
+          <!--END END TIME-->
+
+          <!--END SUFFIX-->
+         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4695-4" ng-show="!calendarForm.duringOperation"><!-- content -->
            <input id="u4695-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-model="timeSlot.endSuffix" name="" placeholder="PM">
          </div>
+          <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4695-4" ng-show="calendarForm.duringOperation"><!-- content -->
+            <input id="u4695-2" style="text-align: center; height: 100%; width: 100%;" type="text" ng-disabled="calendarForm.duringOperation" name="" placeholder="PM">
+          </div>
+          <!--END END SUFFIX-->
+
+
         </div>
         <div class="rounded-corners Paragraph---Light-accent clearfix grpelem" id="u4729-4"><!-- content -->
           <select id="u4729-2" style="text-align: center; width: 70px; min-height: 25px; text-align:center;" ng-model="timeSlot.repeat">
             <option value="" disabled selected>Repeat</option>
-            <option>Daily</option>
             <option>Weekly</option>
             <option>Monthly</option>
+            <option>Yearly</option>
           </select>
         </div>
        </div>
