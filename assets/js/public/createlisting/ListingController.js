@@ -4,6 +4,7 @@ angular.module('ListingModule').controller('ListingController', function($scope,
   /////// CALENDAR FORM ///////
   $scope.calendarForm = {};
   $scope.calendarForm.timeSlots = [{id: 'timeSlot1'}];
+  $scope.calendarForm.duringOperation = false;
 
   $scope.addTimeSlot = function() {
     console.log('Clicked add time slot');
@@ -17,7 +18,7 @@ angular.module('ListingModule').controller('ListingController', function($scope,
   };
 
   $scope.clickedCalendarNext = function() {
-    $window.location.href = '/create_listing_description?calendar=' + $scope.calendarForm;
+    $window.location.href = '/create_listing_description?calendar=' + JSON.stringify($scope.calendarForm);
   };
 
   /////// DESCRIPTION FORM ///////

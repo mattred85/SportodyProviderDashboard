@@ -68,7 +68,7 @@ module.exports = {
     var params = req.params.all();
     console.log(params);
 
-    res.view('createlisting_preview', {
+    res.view('createlisting_preview_v2', {
       listing: {
         calendar: params.calendar,
         title: params.title,

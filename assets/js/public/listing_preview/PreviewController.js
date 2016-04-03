@@ -1,11 +1,24 @@
 angular.module('ListingModule').controller('PreviewController', function($scope, $http, $window, $location) {
   // PREVIEW
   $scope.preview = {};
-  $scope.preview.calendar = $window.SAILS_LOCALS.listing.calendar;
+  $scope.preview.calendar = JSON.parse($window.SAILS_LOCALS.listing.calendar);
   $scope.preview.title = $window.SAILS_LOCALS.listing.title;
   $scope.preview.summary = $window.SAILS_LOCALS.listing.summary;
   $scope.preview.extras = JSON.parse($window.SAILS_LOCALS.listing.extras);
 
+  // TIME SLOT LOGIC //
+  $scope.addTimeSlot = function() {
+    console.log('Clicked add time slot');
+    var newTimeSlotId = $scope.preview.calendar.timeSlots.length+1;
+    $scope.preview.calendar.timeSlots.push({'id':'timeSlot'+newTimeSlotId});
+    console.log($scope.preview.calendar.timeSlots[0]);
+  };
+  $scope.removeTimeSlot = function(timeSlot) {
+    var index = $scope.preview.calendar.timeSlots.indexOf(timeSlot);
+    $scope.preview.calendar.timeSlots.splice(index, 1);
+  };
+
+  // EXTRAS LOGIC //
   $scope.addExtra = function() {
     var newExtraId = $scope.preview.extras.length+1;
     $scope.preview.extras.push({'id':'extra'+newExtraId});

@@ -13,8 +13,7 @@ module.exports = {
       autoIncrement: true
     },
     calendar: {
-      type: 'Int',
-      default: 0
+      type: 'JSON'
     },
     title: {
       type: 'String'
