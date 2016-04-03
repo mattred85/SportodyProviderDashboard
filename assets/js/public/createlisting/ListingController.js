@@ -16,6 +16,10 @@ angular.module('ListingModule').controller('ListingController', function($scope,
     $scope.calendarForm.timeSlots.splice(index, 1);
   };
 
+  $scope.clickedCalendarNext = function() {
+    $window.location.href = '/create_listing_description?calendar=' + $scope.calendarForm;
+  };
+
   /////// DESCRIPTION FORM ///////
   $scope.descriptionForm = {};
 
@@ -31,7 +35,8 @@ angular.module('ListingModule').controller('ListingController', function($scope,
 
   $scope.clickedDescriptionNext = function() {
     if ($scope.descriptionForm.title && $scope.descriptionForm.summary) {
-      $window.location.href = '/create_listing_extras?title=' + $scope.descriptionForm.title + '&summary=' + $scope.descriptionForm.summary;
+      console.log($window.SAILS_LOCALS.listing.calendar);
+      $window.location.href = '/create_listing_extras?' + 'calendar=' + $window.SAILS_LOCALS.listing.calendar + '&title=' + $scope.descriptionForm.title + '&summary=' + $scope.descriptionForm.summary;
     }
   };
 
@@ -60,7 +65,7 @@ angular.module('ListingModule').controller('ListingController', function($scope,
   };
 
   $scope.clickedDescriptionBack = function() {
-    $window.location.href = '/create_listing_description?title=' + $window.SAILS_LOCALS.listing.title + '&summary=' + $window.SAILS_LOCALS.listing.summary;
+    $window.location.href = '/create_listing_description?' + 'calendar=' + $window.SAILS_LOCALS.listing.calendar + '&title=' + $window.SAILS_LOCALS.listing.title + '&summary=' + $window.SAILS_LOCALS.listing.summary;
   };
 
   $scope.clickedExtrasNext = function() {
@@ -68,7 +73,7 @@ angular.module('ListingModule').controller('ListingController', function($scope,
     var extrasString = JSON.stringify($scope.extrasForm.extras);
     console.log(extrasString);
 
-    $window.location.href = '/create_listing_preview?title=' + $window.SAILS_LOCALS.listing.title +
+    $window.location.href = '/create_listing_preview?' + 'calendar='+ $window.SAILS_LOCALS.listing.calendar + '&title=' + $window.SAILS_LOCALS.listing.title +
                             '&summary=' + $window.SAILS_LOCALS.listing.summary +
                             '&extras=' + extrasString;
   };
