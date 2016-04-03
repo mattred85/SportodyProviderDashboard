@@ -64,7 +64,9 @@ module.exports.routes = {
 
   'post /api/publish_listing' : 'ListingController.publishListing',
 
-  'get /view_listing' : 'ListingController.viewListing'
+  'get /view_listing' : 'ListingController.viewListing',
+
+  'post /api/update_listing' : 'ListingController.updateListing'
 
   /***************************************************************************
   *                                                                          *

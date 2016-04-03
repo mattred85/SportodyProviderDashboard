@@ -125,7 +125,7 @@ module.exports = {
 
   viewListing: function(req, res) {
     console.log('==============================');
-    console.log('ListingController.deleteListing');
+    console.log('ListingController.viewListing');
     var params = req.params.all();
     console.log('Listing:');
     console.log(params.listing);
@@ -133,6 +133,26 @@ module.exports = {
     res.view('view_listing', {
       listing: params.listing
     });
+  },
+
+  updateListing: function(req, res) {
+    console.log('==============================');
+    console.log('ListingController.updateListing');
+    var params = req.params.all();
+    var listing = params.listing;
+    console.log('Listing:');
+    console.log(listing);
+
+    Listing.update({id: listing.id}, listing).exec(function(err, updated) {
+      if (err) {
+        console.log('Error updating listing');
+        console.log(err);
+        res.serverError(err);
+        return;
+      }
+      console.log('Updated listing successfully');
+      res.send({message: 'ok', listing: updated});
+    })
   }
 };
 
