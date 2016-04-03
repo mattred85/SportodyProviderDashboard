@@ -470,6 +470,7 @@
 	position: relative;
 	margin-right: -10000px;
 	padding: 41px 8px 30px 4px;
+  cursor:not-allowed;
 }
 
 #u2223-4
@@ -507,6 +508,7 @@
 	margin-right: -10000px;
 	left: 198px;
 	padding: 41px 8px 30px 4px;
+  cursor: not-allowed;
 }
 
 #u2449-4
@@ -544,6 +546,7 @@
 	margin-right: -10000px;
 	left: 396px;
 	padding: 41px 8px 30px 4px;
+  cursor: not-allowed;
 }
 
 #u2462-4
