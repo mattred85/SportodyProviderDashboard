@@ -618,6 +618,18 @@
 	position: relative;
 }
 
+#warning_title
+{
+  z-index: 82;
+  width: 585px;
+  border-radius: 3px;
+  text-indent: 6px;
+  line-height: 14px;
+  margin-left: 187px;
+  position: relative;
+  margin-top: 10px;
+}
+
 #pu2487-4
 {
 	width: 0.01px;

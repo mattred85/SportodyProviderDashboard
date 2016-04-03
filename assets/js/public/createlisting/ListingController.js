@@ -35,11 +35,29 @@ angular.module('ListingModule').controller('ListingController', function($scope,
   }
 
   $scope.clickedDescriptionNext = function() {
+    if (!$scope.descriptionForm.title) {
+      $scope.titleEmpty = true
+    } else {
+      $scope.titleEmpty = false
+    }
+
+    if (!$scope.descriptionForm.summary) {
+      $scope.summaryEmpty = true
+    } else {
+      $scope.summaryEmpty = false
+    }
+
     if ($scope.descriptionForm.title && $scope.descriptionForm.summary) {
       console.log($window.SAILS_LOCALS.listing.calendar);
       $window.location.href = '/create_listing_extras?' + 'calendar=' + $window.SAILS_LOCALS.listing.calendar + '&title=' + $scope.descriptionForm.title + '&summary=' + $scope.descriptionForm.summary;
     }
   };
+
+  $scope.titleEmpty = false;
+  $scope.titleEmtpyText = 'A listing name is required';
+
+  $scope.summaryEmpty = false;
+  $scope.summaryEmptyText = 'A summary is required';
 
   /////// EXTRAS FORM ///////
   $scope.extrasForm = {};

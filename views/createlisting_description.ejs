@@ -236,6 +236,14 @@
           <!-- content -->
             <input id="u2481-2" style="height: 100%; width: 100%; height: 100%; padding-left: 3px;" type="text" placeholder="Be clear and descriptive" maxlength="35" ng-model="descriptionForm.title">
         </div>
+
+
+        <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="warning_title" ng-show="titleEmpty" ng-cloak>
+          <!-- content -->
+          <span id="u2481-2" style="color: #d9534f; font-size: 14px" ng-bind="titleEmtpyText" ng-cloak></span>
+        </div>
+
+
         <div class="clearfix colelem" id="pu2487-4">
           <!-- group -->
           <div class="Heading-2---Dark clearfix grpelem" id="u2487-4">
@@ -251,6 +259,12 @@
           <!-- content -->
           <input id="u2488-2" style="height: 100%; width: 100%; height: 100%; padding-left: 3px;" type="text" placeholder="Help people know why they should visit you. Include details of what they can expect" maxlength="250" ng-model="descriptionForm.summary">
         </div>
+
+        <div class="rounded-corners Paragraph---Light-accent clearfix colelem" id="warning_title" ng-show="summaryEmpty" ng-cloak>
+          <!-- content -->
+          <span id="u2481-2" style="color: #d9534f; font-size: 14px" ng-bind="summaryEmptyText" ng-cloak></span>
+        </div>
+
         <div class="clearfix colelem" id="pu2502-4">
           <!-- group -->
           <a class="nonblock nontext clearfix grpelem" id="u2502-4" href="create_listing_calendar">
