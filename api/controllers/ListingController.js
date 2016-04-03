@@ -121,6 +121,18 @@ module.exports = {
       }
       res.send({message: 'ok'});
     })
+  },
+
+  viewListing: function(req, res) {
+    console.log('==============================');
+    console.log('ListingController.deleteListing');
+    var params = req.params.all();
+    console.log('Listing:');
+    console.log(params.listing);
+
+    res.view('view_listing', {
+      listing: params.listing
+    });
   }
 };
 

@@ -33,4 +33,9 @@ angular.module('ListingModule').controller('ViewListingsController', function($s
       console.log(err);
     })
   };
+
+  $scope.viewListing = function(listing) {
+    console.log('Going to view listing');
+    $window.location.href = '/view_listing?' + 'listing=' + JSON.stringify(listing);
+  }
 });
