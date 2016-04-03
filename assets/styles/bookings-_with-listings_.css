@@ -579,6 +579,55 @@
 	left: 458px;
 }
 
+/*asdfasdfasdfasdfdsa*/
+/*asdfasdfasdfasdfdsa*/
+/*asdfasdfasdfasdfdsa*/
+
+#listings_photo_outside
+{
+  z-index: 45;
+  margin-bottom: -1px;
+  position: relative;
+  margin-right: -10000px;
+  padding: 0px 0px 0px 0px;
+  width: 50px;
+
+}
+
+#listings_photo_inside
+{
+  z-index: 58;
+  width: 62px;
+  background-color: transparent;
+  margin-left: 60px;
+  margin-top: 31px;
+  position: relative;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+/*
+#u2426_img
+{
+  z-index: 45;
+  width: 175px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #B3B3B3;
+  background-color: #F4F4F4;
+  border-radius: 3px;
+  margin-bottom: -1px;
+  position: relative;
+  margin-right: -10000px;
+  padding: 41px 8px 30px 4px;
+  cursor:not-allowed;
+}
+*/
+
+/*asdfasdfasdfasdfdsa*/
+/*asdfasdfasdfasdfdsa*/
+/*asdfasdfasdfasdfdsa*/
+
 #buttonu4415:hover
 {
 	background-color: #545454;
