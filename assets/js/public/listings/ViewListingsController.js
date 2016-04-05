@@ -16,7 +16,7 @@ angular.module('ListingModule').controller('ViewListingsController', function($s
   $window.SAILS_LOCALS.listings;
 
   $scope.yourListingTitle = 'Your listings';
-  $scope.noListingTitle = 'You don\t have any listings';
+  $scope.noListingTitle = 'You don\'t have any listings';
 
   $scope.removeListing = function(listing) {
     var index = $scope.listings.indexOf(listing);
