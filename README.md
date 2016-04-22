@@ -8,6 +8,8 @@ Olabode Anise
 
 Ryan DeJesus
 
+---------------
+
 Setup:
 
 1) npm install
